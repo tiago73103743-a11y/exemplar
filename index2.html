@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial — ConstruSul Empreendimentos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+
+        :root {
+            --cor-primaria: #b45309;
+            --cor-secundaria: #92400e;
+            --cor-destaque: #15803d;
+            --cor-fundo: #fffbeb;
+            --cor-texto: #422006;
+            --cor-clara: #ffffff;
+            --cor-cinza: #78716c;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Navegação */
+        .navegacao {
+            text-align: right;
+            margin-bottom: 2rem;
+        }
+
+        .navegacao a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            background: rgba(180, 83, 9, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .navegacao a:hover {
+            background: rgba(180, 83, 9, 0.2);
+        }
+
+        /* Seção Principal / Biografia */
+        .secao-bio {
+            background: var(--cor-clara);
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .foto-perfil {
+            flex-shrink: 0;
+        }
+
+        .foto-perfil img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fef3c7;
+            box-shadow: 0 4px 15px rgba(180, 83, 9, 0.2);
+        }
+
+        .conteudo-bio {
+            flex: 1;
+        }
+
+        .conteudo-bio h1 {
+            color: var(--cor-primaria);
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cargo {
+            color: var(--cor-destaque);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .conteudo-bio p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .destaque {
+            font-weight: 600;
+            color: var(--cor-secundaria);
+        }
+
+        .redes-sociais {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .redes-sociais a {
+            padding: 0.6rem 1.2rem;
+            background: #fef3c7;
+            color: var(--cor-secundaria);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .redes-sociais a:hover {
+            background: var(--cor-primaria);
+            color: white;
+        }
+
+        /* Destaques */
+        .destaques {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .destaque-item {
+            background: #fef3c7;
+            padding: 1.2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .destaque-item strong {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--cor-primaria);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #fef3c7;
+            color: var(--cor-cinza);
+            font-size: 0.9rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao-bio {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+            .foto-perfil {
+                margin: 0 auto;
+            }
+            .redes-sociais {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navegação -->
+        <div class="navegacao">
+            <a href="file:///C:/Users/Tiago/Desktop/02020/index.html">Sobre Nós →</a>
+        </div>
+
+        <!-- Biografia Principal -->
+        <div class="secao-bio">
+            <div class="foto-perfil">
+                <!-- 📸 Imagem de exemplo — substitua pela sua -->
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Foto de Perfil">
+            </div>
+
+            <div class="conteudo-bio">
+                <h1>Carlos Alberto Martins</h1>
+                <p class="cargo">Fundador e Diretor Executivo — ConstruSul Empreendimentos</p>
+
+                <p>Olá! É um prazer recebê-lo aqui. Sou o <span class="destaque">Carlos Alberto</span>, mineiro de Belo Horizonte, apaixonado pela construção civil desde os 16 anos, quando comecei a trabalhar ao lado do meu pai.</p>
+
+                <p>Com mais de <span class="destaque">25 anos de experiência</span> no ramo, fundei a ConstruSul em 2009 com um sonho: transformar a forma como construímos, colocando <span class="destaque">honestidade, qualidade e respeito</span> em cada tijolo e em cada relação com nossos clientes.</p>
+
+                <p>Minha trajetória começou com pequenas reformas e, com muito trabalho e confiança conquistada, evoluímos para projetos de grande porte. Hoje, lidero uma equipe de mais de 30 profissionais capacitados, sempre com a certeza de que <span class="destaque">construir vai muito além de erguer edifícios — é sobre realizar sonhos</span>.</p>
+
+                <p>Formado em Engenharia Civil pela Universidade Federal de Minas Gerais e com especialização em Gestão de Obras, busco sempre unir <span class="destaque">experiência prática a tecnologia moderna</span> para entregar o melhor resultado em cada empreendimento.</p>
+
+                <div class="redes-sociais">
+                    <a href="mailto:contato@construsulemp.com.br">📧 E-mail</a>
+                    <a href="https://wa.me/5531977775555" target="_blank">💬 WhatsApp</a>
+                    <a href="#" target="_blank">📘 Facebook</a>
+                    <a href="#" target="_blank">💼 LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Destaques -->
+        <div class="secao-bio" style="display: block;">
+            <h2 style="color: var(--cor-primaria); margin-bottom: 1rem;">Nossa Trajetória em Números</h2>
+            <div class="destaques">
+                <div class="destaque-item">
+                    <strong>15+</strong>
+                    <span>Anos de Mercado</span>
+                </div>
+                <div class="destaque-item">
+                    <strong>500+</strong>
+                    <span>Projetos Concluídos</span>
+                </div>
+               <div class="destaque-item">
+    <strong>30+</strong>
+    <a href="file:///C:/Users/Tiago/Desktop/02020/pagina%202/3index.html" style="
+        color: #b45309;
+        text-decoration: none;
+        font-weight: 600;
+    ">Colaboradores</a>
+</div>
+                <div class="destaque-item">
+                    <strong>98%</strong>
+                    <span>Clientes Satisfeitos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2026 ConstruSul Empreendimentos Ltda — Todos os direitos reservados</p>
+            <p style="margin-top: 0.3rem; font-size: 0.85rem;">CNPJ: 22.444.666/0001-88 | Belo Horizonte — MG</p>
+        </footer>
+    </div>
+</body>
+</html>

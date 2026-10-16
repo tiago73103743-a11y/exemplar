@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Equipe & Crescimento — ConstruSul Empreendimentos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+
+        :root {
+            --cor-primaria: #b45309;
+            --cor-secundaria: #92400e;
+            --cor-destaque: #15803d;
+            --cor-fundo: #fffbeb;
+            --cor-texto: #422006;
+            --cor-clara: #ffffff;
+            --cor-cinza: #78716c;
+            --cor-crescimento: #16a34a;
+            --cor-grafico: #fef3c7;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Navegação */
+        .navegacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .navegacao a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            background: rgba(180, 83, 9, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .navegacao a:hover {
+            background: rgba(180, 83, 9, 0.2);
+        }
+
+        /* Cabeçalho da Página */
+        .cabecalho-pagina {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cabecalho-pagina h1 {
+            color: var(--cor-primaria);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cabecalho-pagina p {
+            color: var(--cor-cinza);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Seção Equipe */
+        .secao-equipe {
+            margin-bottom: 4rem;
+        }
+
+        .grade-equipe {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-membro {
+            background: var(--cor-clara);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-membro:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(180, 83, 9, 0.15);
+        }
+
+        .foto-membro {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fef3c7;
+            margin-bottom: 1rem;
+        }
+
+        .card-membro h3 {
+            color: var(--cor-primaria);
+            font-size: 1.15rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .cargo {
+            color: var(--cor-destaque);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .bio-curta {
+            font-size: 0.9rem;
+            color: var(--cor-cinza);
+            line-height: 1.5;
+        }
+
+        /* Seção Crescimento */
+        .secao-crescimento {
+            background: var(--cor-clara);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 3rem;
+        }
+
+        .secao-crescimento h2 {
+            color: var(--cor-primaria);
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .secao-crescimento h2::before {
+            content: '📈';
+        }
+
+        .grafico-container {
+            background: var(--cor-grafico);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .barra-linha {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            gap: 1rem;
+        }
+
+        .ano {
+            width: 60px;
+            font-weight: 600;
+            color: var(--cor-secundaria);
+        }
+
+        .barra-fundo {
+            flex: 1;
+            height: 36px;
+            background: #f5e8c8;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .barra-preenchida {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cor-crescimento), #22c55e);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.8rem;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: width 1s ease-out;
+        }
+
+        .dados-crescimento {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .dado-destaque {
+            text-align: center;
+            padding: 1.5rem;
+            background: #fef3c7;
+            border-radius: 12px;
+        }
+
+        .dado-destaque .numero {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cor-crescimento);
+        }
+
+        .dado-destaque .texto {
+            font-size: 0.9rem;
+            color: var(--cor-secundaria);
+            margin-top: 0.3rem;
+        }
+
+        /* Marcos / Linha do Tempo */
+        .linha-tempo {
+            margin-top: 2.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #fef3c7;
+        }
+
+        .marco {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .marco::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background: var(--cor-crescimento);
+            border-radius: 50%;
+            border: 3px solid var(--cor-fundo);
+        }
+
+        .marco-ano {
+            font-weight: 700;
+            color: var(--cor-primaria);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #fef3c7;
+            color: var(--cor-cinza);
+            font-size: 0.9rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao-crescimento {
+                padding: 2rem 1.5rem;
+            }
+            .grafico-container {
+                padding: 1.5rem 1rem;
+            }
+            .barra-linha {
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navegação -->
+        <div class="navegacao">
+            <a href="index.html">← Página Inicial</a>
+            <a href="file:///C:/Users/Tiago/Desktop/02020/pagina%202/3index.html">Sobre Nós →</a>
+        </div>
+
+        <!-- Cabeçalho -->
+        <div class="cabecalho-pagina">
+            <h1>Nossa Equipe & Crescimento</h1>
+            <p>Conheça as pessoas que fazem a ConstruSul crescer a cada dia e acompanhe nossa trajetória de evolução e conquistas.</p>
+        </div>
+
+        <!-- 👥 Nossa Equipe -->
+        <section class="secao-equipe">
+            <div class="grade-equipe">
+                <!-- Membro 1 -->
+                <div class="card-membro">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face" alt="Carlos Alberto" class="foto-membro">
+                    <h3>Carlos Alberto Martins</h3>
+                    <p class="cargo">Fundador & Diretor Executivo</p>
+                    <p class="bio-curta">Engenheiro Civil com mais de 25 anos de experiência. Lidera a ConstruSul desde sua fundação em 2009.</p>
+                </div>
+
+                <!-- Membro 2 -->
+                <div class="card-membro">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face" alt="Mariana Costa" class="foto-membro">
+                    <h3>Mariana Costa Silva</h3>
+                    <p class="cargo">Gerente de Projetos</p>
+                    <p class="bio-curta">Arquiteta especializada em gestão de obras. Garante qualidade e cumprimento de prazos em cada etapa.</p>
+                </div>
+
+                <!-- Membro 3 -->
+                <div class="card-membro">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face" alt="Pedro Henrique" class="foto-membro">
+                    <h3>Pedro Henrique Souza</h3>
+                    <p class="cargo">Engenheiro de Obras</p>
+                    <p class="bio-curta">Responsável pela execução técnica. Com 12 anos de atuação, une segurança e precisão em cada projeto.</p>
+                </div>
+
+                <!-- Membro 4 -->
+                <div class="card-membro">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face" alt="Beatriz Santos" class="foto-membro">
+                    <h3>Beatriz Santos Lima</h3>
+                    <p class="cargo">Administrativa & Financeira</p>
+                    <p class="bio-curta">Cuida de toda a parte financeira e administrativa. Mantém a empresa organizada e em dia com suas obrigações.</p>
+                </div>
+
+                <!-- Membro 5 -->
+                <div class="card-membro">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&crop=face" alt="Rafael Almeida" class="foto-membro">
+                    <h3>Rafael Almeida Pereira</h3>
+                    <p class="cargo">Supervisor de Equipe</p>
+                    <p class="bio-curta">Com 15 anos de construção, lidera as equipes em campo com dedicação e foco na segurança.</p>
+                </div>
+
+                <!-- Membro 6 -->
+                <div class="card-membro">
+                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300&h=300&fit=crop&crop=face" alt="Larissa Mendes" class="foto-membro">
+                    <h3>Larissa Mendes Rocha</h3>
+                    <p class="cargo">Atendimento & Relacionamento</p>
+                    <p class="bio-curta">Primeiro contato dos clientes. Cuida de cada detalhe do atendimento com simpatia e eficiência.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📈 Crescimento da Empresa -->
+        <section class="secao-crescimento">
+            <h2>Nosso Crescimento ao Longo dos Anos</h2>
+
+            <!-- Gráfico de Barras -->
+            <div class="grafico-container">
+                <p style="margin-bottom: 1rem; font-weight: 600; color: var(--cor-secundaria);">Crescimento em número de projetos concluídos:</p>
+                
+                <div class="barra-linha">
+                    <span class="ano">2009</span>
+                    <div class="barra-fundo">
+                        <div class="barra-preenchida" style="width: 15%;">8</div>
+                    </div>
+                </div>
+
+                <div class="barra-linha">
+                    <span class="ano">2013</span>
+                    <div class="barra-fundo">
+                        <div class="barra-preenchida" style="width: 30%;">22</div>
+                    </div>
+                </div>
+
+                <div class="barra-linha">
+                    <span class="ano">2017</span>
+                    <div class="barra-fundo">
+                        <div class="barra-preenchida" style="width: 50%;">45</div>
+                    </div>
+                </div>
+
+                <div class="barra-linha">
+                    <span class="ano">2021</span>
+                    <div class="barra-fundo">
+                        <div class="barra-preenchida" style="width: 75%;">72</div>
+                    </div>
+                </div>
+
+                <div class="barra-linha">
+                    <span class="ano">2024</span>
+                    <div class="barra-fundo">
+                        <div class="barra-preenchida" style="width: 90%;">88</div>
+                    </div>
+                </div>
+
+                <div class="barra-linha">
+                    <span class="ano">2026</span>
+                    <div class="barra-fundo">
+                        <div class="barra-preenchida" style="width: 100%;">105</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Números em Destaque -->
+            <div class="dados-crescimento">
+                <div class="dado-destaque">
+                    <div class="numero">+42%</div>
+                    <div class="texto">Crescimento em clientes (2024-2026)</div>
+                </div>
+                <div class="dado-destaque">
+                    <div class="numero">32</div>
+                    <div class="texto">Colaboradores diretos hoje</div>
+                </div>
+                <div class="dado-destaque">
+                    <div class="numero">R$ 2,8M</div>
+                    <div class="texto">Investidos em equipamentos</div>
+                </div>
+                <div class="dado-destaque">
+                    <div class="numero">98%</div>
+                    <div class="texto">Satisfação dos clientes</div>
+                </div>
+            </div>
+
+            <!-- Linha do Tempo / Marcos -->
+            <h3 style="margin-top: 2.5rem; color: var(--cor-primaria);">Nossos Principais Marcos</h3>
+            <div class="linha-tempo">
+                <div class="marco">
+                    <span class="marco-ano">2009 — Fundação</span>
+                    <p>ConstruSul nasce com uma equipe de 3 pessoas e foco em pequenas reformas residenciais.</p>
+                </div>
+                <div class="marco">
+                    <span class="marco-ano">2014 — Primeiro Grande Projeto</span>
+                    <p>Conclusão do primeiro empreendimento comercial com mais de 2.000 m² de área construída.</p>
+                </div>
+                <div class="marco">
+                    <span class="marco-ano">2018 — Ampliação da Equipe</span>
+                    <p>Chegada de engenheiros e arquitetos especializados, permitindo atender projetos de maior complexidade.</p>
+                </div>
+                <div class="marco">
+                    <span class="marco-ano">2022 — Nova Sede</span>
+                    <p>Instalação em sede própria com estrutura completa para atendimento, planejamento e execução de obras.</p>
+                </div>
+                <div class="marco">
+                    <span class="marco-ano">2026 — Expansão Regional</span>
+                    <p>Início de atuação em cidades vizinhas e meta de dobrar o portfólio de clientes até 2030.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; 2026 ConstruSul Empreendimentos Ltda — Todos os direitos reservados</p>
+            <p style="margin-top: 0.3rem; font-size: 0.85rem;">CNPJ: 22.444.666/0001-88 | Belo Horizonte — MG</p>
+        </footer>
+    </div>
+</body>
+</html>

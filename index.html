@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos — ConstruSul Empreendimentos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+
+        :root {
+            --cor-primaria: #b45309;
+            --cor-secundaria: #92400e;
+            --cor-destaque: #15803d;
+            --cor-fundo: #fffbeb;
+            --cor-texto: #422006;
+            --cor-clara: #ffffff;
+            --cor-cinza: #78716c;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* 🏠 Link Página Inicial */
+        .link-inicio { 
+            text-align: left;
+            margin-bottom: 1.5rem;
+
+        }
+
+        .link-inicio a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            background: rgba(180, 83, 9, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .link-inicio a:hover {
+            background: rgba(180, 83, 9, 0.2);
+            transform: translateX(-3px);
+        }
+
+        .cabecalho {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .cabecalho h1 {
+            color: var(--cor-primaria);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cabecalho p {
+            color: var(--cor-cinza);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--cor-clara);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card h2 {
+            color: var(--cor-primaria);
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #fef3c7;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h2::before {
+            content: '';
+            width: 4px;
+            height: 22px;
+            background: var(--cor-destaque);
+            border-radius: 2px;
+        }
+
+        .bloco-valores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .valor-item {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--cor-primaria);
+        }
+
+        .valor-item strong {
+            color: var(--cor-secundaria);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .grade-dados {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .dado-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dado-item label {
+            font-weight: 600;
+            color: var(--cor-cinza);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dado-item span {
+            font-size: 1rem;
+            color: var(--cor-texto);
+        }
+
+        .caixa-mapa {
+            margin-top: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+
+        .caixa-mapa iframe {
+            width: 100%;
+            height: 320px;
+            border: none;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #fef3c7;
+            color: var(--cor-cinza);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.5rem;
+            }
+            .cabecalho h1 {
+                font-size: 1.5rem;
+            }
+            .caixa-mapa iframe {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 🏠 PÁGINA INICIAL — Canto superior esquerdo -->
+        <div class="link-inicio">
+            <a href="file:///C:/Users/Tiago/Desktop/02020/index2.html">← Página Inicial</a>
+        </div>
+
+        <!-- Cabeçalho -->
+        <div class="cabecalho">
+            <h1 id="nome-empresa">—</h1>
+            <p id="subtitulo-empresa">—</p>
+        </div>
+
+        <!-- Sobre Nós -->
+        <div class="card">
+            <h2>Nossa História</h2>
+            <p id="descricao-empresa" style="font-size: 1.05rem;"></p>
+        </div>
+
+        <!-- Missão, Visão e Valores -->
+        <div class="card">
+            <h2>Nosso Propósito</h2>
+            
+            <div style="margin-bottom: 1.2rem;">
+                <strong style="color: var(--cor-secundaria);">🎯 Missão</strong>
+                <p id="missao" style="margin-top: 0.3rem;"></p>
+            </div>
+
+            <div style="margin-bottom: 1.2rem;">
+                <strong style="color: var(--cor-secundaria);">🔭 Visão</strong>
+                <p id="visao" style="margin-top: 0.3rem;"></p>
+            </div>
+
+            <div>
+                <strong style="color: var(--cor-secundaria);">💎 Nossos Princípios</strong>
+                <div class="bloco-valores" id="valores-lista">
+                    <!-- Preenchido automaticamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Dados da Empresa -->
+        <div class="card">
+            <h2>Dados Cadastrais</h2>
+            <div class="grade-dados">
+                <div class="dado-item">
+                    <label>CNPJ</label>
+                    <span id="cnpj">—</span>
+                </div>
+                <div class="dado-item">
+                    <label>Fundação</label>
+                    <span id="fundacao">—</span>
+                </div>
+                <div class="dado-item">
+                    <label>E-mail</label>
+                    <span id="email">—</span>
+                </div>
+                <div class="dado-item">
+                    <label>Telefone</label>
+                    <span id="telefone">—</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Localização -->
+        <div class="card">
+            <h2>Onde Estamos</h2>
+            <p id="endereco" style="margin-bottom: 0.5rem; font-weight: 500;"></p>
+            <p id="cep-cidade" style="color: var(--cor-cinza); font-size: 0.95rem; margin-bottom: 1rem;"></p>
+            
+            <div class="caixa-mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248568.06165566414!2d-44.016723734375!3d-19.9245305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69e50b68c12ff%3A0x5a50921b346f3c7c!2sBelo%20Horizonte%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1728865200000!5m2!1spt-BR!2sbr"
+                    allowfullscreen 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>&copy; <span id="ano-atual"></span> <span id="nome-rodape"></span> — Todos os direitos reservados</p>
+            <p style="margin-top: 0.3rem; font-size: 0.85rem;">CNPJ: <span id="cnpj-rodape"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // =====================================================
+        // ✅ DADOS DA EMPRESA — EDITE AQUI SE PRECISAR
+        // =====================================================
+        const empresa = {
+            nome: "ConstruSul Empreendimentos Ltda",
+            subtitulo: "Construindo sonhos, erguendo o futuro",
+            descricao: "Há mais de 15 anos no mercado, a ConstruSul nasceu com a vocação de transformar projetos em realidade. Especializada em obras residenciais, comerciais e reformas, consolidamos nossa marca com trabalho sério, cumprimento de prazos e dedicação total a cada empreendimento. Acreditamos que construir vai muito além de erguer paredes: é criar lares, fortalecer negócios e contribuir com o desenvolvimento das cidades onde atuamos.",
+            missao: "Executar projetos com excelência, segurança e transparência, superando as expectativas de cada cliente e garantindo qualidade em cada etapa da obra.",
+            visao: "Ser referência no setor da construção civil em Minas Gerais até 2030, reconhecida pela confiança, inovação e compromisso com a sustentabilidade.",
+            valores: [
+                { nome: "Compromisso", desc: "Cumprimos o prometido, sempre" },
+                { nome: "Segurança", desc: "Cuidamos de nossa equipe e de todos ao redor" },
+                { nome: "Qualidade", desc: "Acabamento impecável e materiais de primeira" },
+                { nome: "Integridade", desc: "Honestidade em cada negociação e ação" },
+                { nome: "Evolução", desc: "Tecnologia e métodos modernos em nossa prática" }
+            ],
+            cnpj: "22.444.666/0001-88",
+            fundacao: "05/03/2009",
+            email: "contato@construsulemp.com.br",
+            telefone: "(31) 97777-5555",
+            endereco: "Rua das Construções, 450 — Galpão 2",
+            complemento: "",
+            bairro: "Bairro Industrial",
+            cidade_uf: "Belo Horizonte — MG",
+            cep: "30400-200"
+        };
+
+        // =====================================================
+        // ⚙️ PREENCHIMENTO AUTOMÁTICO — NÃO ALTERAR
+        // =====================================================
+        document.getElementById("nome-empresa").textContent = empresa.nome;
+        document.getElementById("subtitulo-empresa").textContent = empresa.subtitulo;
+        document.getElementById("descricao-empresa").textContent = empresa.descricao;
+        document.getElementById("missao").textContent = empresa.missao;
+        document.getElementById("visao").textContent = empresa.visao;
+        document.getElementById("cnpj").textContent = empresa.cnpj;
+        document.getElementById("fundacao").textContent = empresa.fundacao;
+        document.getElementById("email").textContent = empresa.email;
+        document.getElementById("telefone").textContent = empresa.telefone;
+        document.getElementById("endereco").textContent = empresa.endereco + (empresa.complemento ? `, ${empresa.complemento}` : "");
+        document.getElementById("cep-cidade").textContent = `${empresa.bairro} — ${empresa.cidade_uf} | CEP: ${empresa.cep}`;
+        document.getElementById("ano-atual").textContent = new Date().getFullYear();
+        document.getElementById("nome-rodape").textContent = empresa.nome;
+        document.getElementById("cnpj-rodape").textContent = empresa.cnpj;
+
+        // Lista de valores formatada
+        const containerValores = document.getElementById("valores-lista");
+        empresa.valores.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "valor-item";
+            div.innerHTML = `<strong>${item.nome}</strong>${item.desc}`;
+            containerValores.appendChild(div);
+        });
+    </script>
+</body>
+</html>
